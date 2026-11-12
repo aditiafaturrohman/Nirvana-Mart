@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nirvana Mart — E-Commerce UMKM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="#home"><span>NM</span> Nirvana Mart</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#profil">Profil</a>
+      <a href="#produk">Produk</a>
+      <a href="#cara-pesan">Cara Pesan</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <button class="cart-btn" onclick="openCart()">🛒 <span>Keranjang</span> <b id="cartCount">0</b></button>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">UMKM • Belanja Mudah • Harga Bersahabat</p>
+      <h1>Belanja kebutuhan favoritmu <em>lebih praktis.</em></h1>
+      <p class="hero-text">Nirvana Mart menghadirkan produk pilihan untuk kebutuhan harian dengan kualitas terjaga, promo menarik, dan proses pemesanan yang sederhana.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#produk">Belanja Sekarang →</a>
+        <a class="btn secondary" href="#profil">Tentang Kami</a>
+      </div>
+      <div class="trust"><span>✓ Produk pilihan</span><span>✓ Pembayaran mudah</span><span>✓ Pengiriman aman</span></div>
+    </div>
+    <div class="hero-card">
+      <div class="sale">PROMO</div>
+      <h3>Paket Hemat<br><strong>Weekend</strong></h3>
+      <p>Diskon hingga <b>20%</b></p>
+      <a href="#produk">Lihat Promo →</a>
+    </div>
+  </div>
+</section>
+
+<section class="promo-strip">
+  <div class="container promo-grid">
+    <div><b>🎁 DISKON 10%</b><span>Untuk pembelian minimal Rp100.000</span></div>
+    <div><b>📦 GRATIS ONGKIR</b><span>Area sekitar Nirwana Curug 2*</span></div>
+    <div><b>💳 PEMBAYARAN MUDAH</b><span>Transfer & COD tersedia</span></div>
+  </div>
+</section>
+
+<section id="profil" class="section">
+  <div class="container two-col">
+    <div>
+      <p class="eyebrow">PROFIL BISNIS</p>
+      <h2>Belanja lokal, <br><em>lebih dekat.</em></h2>
+      <p>Nirvana Mart adalah konsep toko online UMKM yang melayani kebutuhan harian masyarakat sekitar. Kami mengutamakan produk yang praktis, harga terjangkau, dan pengalaman belanja yang mudah.</p>
+      <div class="stats"><div><b>2026</b><span>Mulai beroperasi</span></div><div><b>100+</b><span>Target pelanggan</span></div><div><b>4</b><span>Kategori produk</span></div></div>
+    </div>
+    <div class="target-card">
+      <h3>🎯 Target Pasar</h3>
+      <p>Pelajar, mahasiswa, keluarga muda, pekerja, dan warga sekitar yang membutuhkan belanja praktis dengan harga terjangkau.</p>
+      <h3>🛍️ Kategori</h3>
+      <div class="chips"><span>Kebutuhan Harian</span><span>Snack</span><span>Minuman</span><span>Paket Hemat</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="produk" class="section products-section">
+  <div class="container">
+    <div class="section-head">
+      <div><p class="eyebrow">KATALOG PRODUK</p><h2>Produk pilihan kami</h2></div>
+      <div class="filters">
+        <button class="filter active" data-cat="all">Semua</button>
+        <button class="filter" data-cat="snack">Snack</button>
+        <button class="filter" data-cat="minuman">Minuman</button>
+        <button class="filter" data-cat="harian">Harian</button>
+        <button class="filter" data-cat="paket">Paket</button>
+      </div>
+    </div>
+    <div id="productGrid" class="product-grid"></div>
+  </div>
+</section>
+
+<section class="section dark-section">
+  <div class="container">
+    <div class="section-head light"><div><p class="eyebrow">PROMO & BUNDLING</p><h2>Lebih hemat dengan paket</h2></div></div>
+    <div class="bundle-grid">
+      <div class="bundle"><span>BEST VALUE</span><h3>Paket Ngemil</h3><p>Keripik + biskuit + minuman</p><strong>Rp35.000</strong> <del>Rp42.000</del><button onclick="addToCart(9)">Tambah Paket</button></div>
+      <div class="bundle featured"><span>HEMAT 20%</span><h3>Paket Keluarga</h3><p>6 produk kebutuhan pilihan</p><strong>Rp80.000</strong> <del>Rp100.000</del><button onclick="addToCart(10)">Tambah Paket</button></div>
+      <div class="bundle"><span>PROMO</span><h3>Paket Minuman</h3><p>Teh + kopi + air mineral</p><strong>Rp28.000</strong> <del>Rp33.000</del><button onclick="addToCart(11)">Tambah Paket</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="cara-pesan" class="section">
+  <div class="container">
+    <p class="eyebrow">CARA PEMESANAN</p><h2>Belanja dalam 4 langkah</h2>
+    <div class="steps">
+      <div><b>01</b><h3>Pilih Produk</h3><p>Jelajahi katalog dan lihat detail produk.</p></div>
+      <div><b>02</b><h3>Masukkan Keranjang</h3><p>Atur jumlah produk yang ingin dibeli.</p></div>
+      <div><b>03</b><h3>Checkout</h3><p>Isi nama, alamat, dan metode pembayaran.</p></div>
+      <div><b>04</b><h3>Pesanan Diproses</h3><p>Pesanan dikemas lalu dikirim atau diantar.</p></div>
+    </div>
+    <div class="info-grid">
+      <div class="info-box"><h3>💳 Pembayaran</h3><p>Transfer bank, e-wallet, dan COD untuk area yang tersedia.</p></div>
+      <div class="info-box"><h3>🚚 Pengiriman</h3><p>Kurir lokal untuk area sekitar dan ekspedisi untuk luar area. Estimasi menyesuaikan tujuan.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="kontak" class="contact">
+  <div class="container contact-grid">
+    <div><p class="eyebrow">KONTAK</p><h2>Butuh bantuan?</h2><p>Hubungi Nirvana Mart untuk pertanyaan produk, pesanan, atau kerja sama.</p></div>
+    <div class="contact-list">
+      <p>📱 <b>WhatsApp</b><br>08xx-xxxx-xxxx</p>
+      <p>📧 <b>Email</b><br>nirvanamart@email.com</p>
+      <p>📍 <b>Lokasi</b><br>Perumahan Nirwana Curug 2, Tangerang</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="container"><b>Nirvana Mart</b><span>© 2026 — Website tugas E-Commerce Manajemen</span></div></footer>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-box" id="modalContent"></div>
+</div>
+
+<div id="cartModal" class="modal hidden">
+  <div class="modal-box cart-box">
+    <button class="close" onclick="closeCart()">×</button>
+    <p class="eyebrow">KERANJANG</p><h2>Pesanan kamu</h2>
+    <div id="cartItems"></div>
+    <div class="total"><span>Total</span><b id="cartTotal">Rp0</b></div>
+    <button class="btn primary full" onclick="checkout()">Checkout Sekarang</button>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
